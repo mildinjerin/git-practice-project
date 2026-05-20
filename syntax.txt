@@ -6,6 +6,4 @@ for user_id_var in select jsonb_array_elements_text(user_ids)
    	  if not exists (select 1 from smart_learn.sl_enrollment se 
    	                 where se.user_id = (user_id_var)::uuid
    	                   and se.course_id = (course_id_var)::uuid
-   	                   and se.org_id = p_org_id) then 
-   	     insert into smart_learn.sl_enrollment (user_id, course_id, org_id, "role", "status") 
   
