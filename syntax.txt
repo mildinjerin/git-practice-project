@@ -8,6 +8,4 @@ for user_id_var in select jsonb_array_elements_text(user_ids)
    	                   and se.course_id = (course_id_var)::uuid
    	                   and se.org_id = p_org_id) then 
    	     insert into smart_learn.sl_enrollment (user_id, course_id, org_id, "role", "status") 
-   	         values( (user_id_var)::uuid,(course_id_var)::uuid, p_org_id, 'Student', 'Active' );
-   	  end if; 
-   	end loop;
+  
