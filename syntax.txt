@@ -1,9 +1,4 @@
  -----------------------------------------  loop concept
 for user_id_var in select jsonb_array_elements_text(user_ids)
    loop
-   	for course_id_var in select jsonb_array_elements_text(course_ids)
-   	loop
-   	  if not exists (select 1 from smart_learn.sl_enrollment se 
-   	                 where se.user_id = (user_id_var)::uuid
-   	                   and se.course_id = (course_id_var)::uuid
-  
+   	for course_id_var in select jsonb_array_elements_text(course_ids
